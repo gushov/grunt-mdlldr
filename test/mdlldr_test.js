@@ -27,11 +27,24 @@ exports['test mdlldr grunt plugin'] = {
     done();
   },
 
-  'helper': function (test) {
-    test.expect(1);
-    // tests here
-    test.equal(grunt.helper('mdlldr'), 'mdlldr!!!', 'should return the correct value.');
-    test.done();
+  "helper should call": function (test) {
+
+    test.expect(3);
+
+    var target = 'bundle.js';
+    var modules = ['test-mod'];
+    var config = {
+      staticPath: 'test/out',
+      modulePath: 'test/fixtures',
+      overrides: '_'
+    };
+
+    grunt.helper('mdlldr', config, target, modules, function (err, mount, js) {
+      test.ifError(err);
+      test.equal(mount, 'test/out/bundle.js');
+      test.equal(js.length, 111);
+      test.done();
+    });
   }
 
 };
