@@ -15,40 +15,32 @@ module.exports = function(grunt) {
 
     var done = this.async();
     var task = grunt.config('mdlldr');
-    var config = task.config;
     var target = this.target;
     var data = this.data;
 
-    if (target !== 'config' && data.length) {
+    grunt.helper('mdlldr', data, function (err, js) {
 
-      grunt.helper('mdlldr', config, target, data, function (err, mount, js) {
+      if (err) {
+        grunt.log.error(err);
+        done(false);
+      } else {
+        grunt.log.writeln('Writing ' + data.src + ' to ' + data.dest);
+        grunt.file.write(data.dest, js);
+        done(true);
+      }
 
-        if (err) {
-          grunt.log.error(err);
-          done(false);
-        } else {
-          grunt.file.write(mount, js);
-          done(true);
-        }
-
-      });
-
-    } else {
-      done(true);
-    }
+    });
 
   });
 
-  grunt.registerHelper('mdlldr', function(config, target, modules, done) {
+  grunt.registerHelper('mdlldr', function(data, done) {
 
-    var mount = path.join(config.staticPath, target);
-    var modulePath = config.modulePath;
-    var overrides = config.overrides;
+    var root = data.root;
+    var src = data.src;
+    var overrides = data.overrides;
 
-    grunt.log.writeln('Writing ' + modules + ' to ' + mount);
-
-    mdlldr(modules, modulePath, overrides, function (err, js) {
-      return done(err, mount, js);
+    mdlldr(src, root, overrides, function (err, js) {
+      return done(err, js);
     });
 
   });
