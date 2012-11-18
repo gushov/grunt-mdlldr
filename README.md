@@ -38,5 +38,5 @@ mdlldr: {
 ```
 
 ## License
-Copyright (c) 2012 Gus Hovland  
+Copyright (c) 2012 August Hovland
 Licensed under the MIT license.
