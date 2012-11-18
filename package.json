@@ -1,12 +1,8 @@
 {
+  "author": "August Hovland <contact@augusthovland.com>",
   "name": "grunt-mdlldr",
   "description": "Makes node modules browser friendly",
-  "version": "0.1.0",
-  "homepage": "https://github.com/gushov/grunt-mdlldr",
-  "author": {
-    "name": "Gus Hovland",
-    "email": "gushov@gmail.com"
-  },
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/gushov/grunt-mdlldr.git"
@@ -14,12 +10,7 @@
   "bugs": {
     "url": "https://github.com/gushov/grunt-mdlldr/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/gushov/grunt-mdlldr/blob/master/LICENSE-MIT"
-    }
-  ],
+  "licenses": [{ "type": "MIT" }],
   "main": "grunt.js",
   "bin": "bin/grunt-mdlldr",
   "engines": {
@@ -29,12 +20,12 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "grunt": "~0.3.9"
+    "grunt": "~0.3.9",
+    "mdlldr": ">= 0.0.x"
   },
   "devDependencies": {
     "grunt": "~0.3.9"
   },
-  "keywords": [
-    "gruntplugin"
-  ]
+  "keywords": [ "gruntplugin" ],
+  "homepage": "https://github.com/gushov/grunt-mdlldr"
 }
