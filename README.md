@@ -15,13 +15,27 @@ grunt.loadNpmTasks('grunt-mdlldr');
 [getting_started]: https://github.com/cowboy/grunt/blob/master/docs/getting_started.md
 
 ## Documentation
-_(Coming soon)_
 
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][grunt].
+adding to modules to your gruntfile:
 
-## Release History
-_(Nothing yet)_
+```javascript
+mdlldr: {
+  module1: {
+    root: './app/lib',
+    src: ['module1.js'],
+    dest: './build/module1.js'
+  },
+  module2: {
+    root: './app/lib',
+    src: ['module2.js'],
+    dest: './build/module2.js',
+    overrides: {
+      DateZ: 'DateZ',
+      underscore: 'underscore'
+    }
+  }
+}
+```
 
 ## License
 Copyright (c) 2012 Gus Hovland  
