@@ -2,7 +2,7 @@
   "author": "August Hovland <contact@augusthovland.com>",
   "name": "grunt-mdlldr",
   "description": "Makes node modules browser friendly",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/gushov/grunt-mdlldr.git"
@@ -24,7 +24,11 @@
     "mdlldr": ">= 0.0.x"
   },
   "devDependencies": {
-    "grunt": "~0.3.9"
+    "grunt": ">= 0.4.x",
+    "buster": ">= 0.6.x",
+    "grunt-buster": ">= 0.1.x",
+    "grunt-contrib-jshint": ">= 0.1.x",
+    "grunt-contrib-watch": ">= 0.1.x"
   },
   "keywords": [ "gruntplugin" ],
   "homepage": "https://github.com/gushov/grunt-mdlldr"
